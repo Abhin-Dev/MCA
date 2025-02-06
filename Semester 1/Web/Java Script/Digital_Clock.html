@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #00FF00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .clock-container {
+            text-align: center;
+            background-color: #1E1E1E;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+            border: 2px solid #00FF00;
+        }
+
+        .time {
+            font-size: 100px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .date {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #A0FF70;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div id="time" class="time"></div>
+        <div id="date" class="date"></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const timeElement = document.getElementById('time');
+            const dateElement = document.getElementById('date');
+            
+            const now = new Date();
+            
+            // Format time to HH:MM:SS
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            let seconds = now.getSeconds().toString().padStart(2, '0');
+            timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // Format date to Day, Month Date, Year
+            const day = now.toLocaleString('en-us', { weekday: 'short' });
+            const month = now.toLocaleString('en-us', { month: 'short' });
+            const date = now.getDate();
+            const year = now.getFullYear();
+            dateElement.textContent = `${day}, ${month} ${date}, ${year}`;
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        
+        // Initial call to display the time immediately
+        updateClock();
+    </script>
+</body>
+</html>

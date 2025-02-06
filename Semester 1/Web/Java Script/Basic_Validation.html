@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="ColourChange.html" onsubmit="return validate()">
+        <center>
+            <br><br><br>
+            <table>
+                <tr>
+                    <th>User Name :</th>
+                    <td>
+                        <input type="text" id="uname" name="name" >
+                    </td>
+                </tr>
+                <tr>
+                    <th>Password :</th>
+                    <td>
+                        <input type="password" name="password" id="pass">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit" id="sub" name="submit" onclick="validate()">Submit</button>
+        </center>
+    </form>
+</body>
+<script>
+    function validate(){
+        var username=document.getElementById("uname");
+        var password=document.getElementById("pass");
+
+        if(username.value.trim()==""){
+            <!-- Trim is used to remove the spaces used -->
+            alert("Blank User Name");
+            return false;
+        }
+        else if(password.value.trim()==""){
+            alert("Blank Password");
+            return false;
+        }
+        else if(password.value.trim().length < 8){
+            alert("Password is too short");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+</html>

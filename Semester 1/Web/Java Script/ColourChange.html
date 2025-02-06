@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Change</title>
+</head>
+<body id="color">
+    <center>
+        <br>
+        <h1>Colour Change using Java Script</h1>
+        <br><br>
+        <hr>
+        <br>
+        <button onclick="colorchange()">Colour Change</button>
+    </center>
+    <script>
+        function colorchange(){
+            let hex="0123456789abcdef";
+            let clr="#";
+            for(let i=0;i<6;i++){
+                clr+=hex[Math.floor(Math.random()*16)];
+                clr+=hex[math.floor(math.random()*16)];
+
+            }
+            body=document.getElementById("color");
+            body.style.backgroundColor=clr;
+        }
+
+    </script>
+</body>
+</html>

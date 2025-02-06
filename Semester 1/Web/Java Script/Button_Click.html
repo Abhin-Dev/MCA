@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br>
+    <center>
+    <h1>Java Script</h1></center>
+    <br>
+    <br><hr>
+    <p >JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard.It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).
+
+        The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.
+        
+        Although Java and JavaScript are similar in name and syntax, the two languages are distinct and differ greatly in design.
+    <br>
+    <br>
+    <br>
+    <input type="button" id="maths" onclick="maths()" value="Maths">
+    <input type="button" id="english" onclick="english()" value="English">
+    <input type="button" name="" id="both" onclick="both()" value="Both">
+    <input type="button" id="clear" onclick="clean()" value="clear">
+
+    <div id="math" style="display: none;">
+        <h2><u>Mathematics</u></h2>
+        Mathematics is a field of study that discovers and organizes methods, theories and theorems that are developed and proved for the needs of empirical sciences and mathematics itself. There are many areas of mathematics, which include number theory (the study of numbers), algebra (the study of formulas and related structures), geometry (the study of shapes and spaces that contain them), analysis (the study of continuous changes), and set theory (presently used as a foundation for all mathematics).
+
+Mathematics involves the description and manipulation of abstract objects that consist of either abstractions from nature or—in modern mathematics—purely abstract entities that are stipulated to have certain properties, called axioms. Mathematics uses pure reason to prove properties of objects, a proof consisting of a succession of applications of deductive rules to already established results. These results include previously proved theorems, axioms, and—in case of abstraction from nature—some basic properties that are considered true starting points of the theory under consideration
+
+    </div>
+    <div id="eng" style="display: none;">
+        <h2><u>English</u></h2>
+        English Wikipedia is hosted alongside other language editions by the Wikimedia Foundation, an American nonprofit organization. Its content is written independently of other editions in various varieties of English, aiming to stay consistent within articles. Its internal newspaper is The Signpost.
+
+English Wikipedia is the most-read version of Wikipedia, accounting for 48% of Wikipedia's cumulative traffic, with the remaining percentage split among the other languages. The English Wikipedia has the most articles of any edition, at 6,942,110 as of January 2025. It contains 10.8% of articles in all Wikipedias, although it lacks millions of articles found in other editions. The edition's one-billionth edit was made on 13 January 2021.
+    </div>
+    <script>
+        math=document.getElementById("math");
+        eng=document.getElementById("eng");
+
+        function maths(){
+            math.style.display="block";
+            eng.style.display="none";
+        }
+
+        function english(){
+            eng.style.display="block";
+            math.style.display="none";
+        }
+
+        function clean(){
+            math.style.display="none";
+            eng.style.display="none";
+        }
+
+        function both(){
+            math.style.display="block";
+            eng.style.display="block";
+        }
+    </script>
+</body>
+</html>

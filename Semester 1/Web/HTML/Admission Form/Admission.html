@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Course Admission Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
+        <h1 class="text-2xl font-bold text-center mb-6">Master Course Admission Form</h1>
+
+        <form action="/submit" method="POST" class="space-y-4">
+            <!-- Full Name -->
+            <div>
+                <label for="full_name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" id="full_name" name="full_name" required 
+                       class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Email Address -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" required 
+                       class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Contact Number -->
+            <div>
+                <label for="contact_number" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                <input type="tel" id="contact_number" name="contact_number" required 
+                       class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+                <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required 
+                       class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Previous Education -->
+            <div>
+                <label for="education" class="block text-sm font-medium text-gray-700">Previous Education</label>
+                <table class="w-full border border-gray-300 mt-2">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border border-gray-300 p-2">Level</th>
+                            <th class="border border-gray-300 p-2">Board</th>
+                            <th class="border border-gray-300 p-2">Institution</th>
+                            <th class="border border-gray-300 p-2">Marks/Grade</th>
+                            <th class="border border-gray-300 p-2">Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">10th Grade</td>
+                            <td class="border border-gray-300 p-2">
+                                <select name="tenth_board" required 
+                                        class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Board</option>
+                                    <option value="cbse">CBSE</option>
+                                    <option value="icse">ICSE</option>
+                                    <option value="state_board">State Board</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <input type="text" name="tenth_institution" placeholder="Institution Name" required 
+                                       class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <input type="text" name="tenth_marks" placeholder="Marks/Grade" required 
+                                       class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            </td>
+                            <td class="border border-gray-300 p-2 text-center">N/A</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">12th Grade</td>
+                            <td class="border border-gray-300 p-2">
+                                <select name="twelfth_board" required 
+                                        class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Board</option>
+                                    <option value="cbse">CBSE</option>
+                                    <option value="icse">ICSE</option>
+                                    <option value="state_board">State Board</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <input type="text" name="twelfth_institution" placeholder="Institution Name" required 
+                                       class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <input type="text" name="twelfth_marks" placeholder="Marks/Grade" required 
+                                       class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <select name="twelfth_subject" required 
+                                        class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Subject</option>
+                                    <option value="science">Science</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="arts">Arts</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Degree</td>
+                            <td class="border border-gray-300 p-2">
+                                <select name="degree_board" required 
+                                        class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Board</option>
+                                    <option value="ugc">UGC</option>
+                                    <option value="aicte">AICTE</option>
+                                    <option value="state_university">State University</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <input type="text" name="degree_institution" placeholder="Institution Name" required 
+                                       class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <input type="text" name="degree_marks" placeholder="Marks/Grade" required 
+                                       class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            </td>
+                            <td class="border border-gray-300 p-2">
+                                <select name="degree_subject" required 
+                                        class="w-full p-1 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Subject</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="science">Science</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="arts">Arts</option>
+                                    <option value="law">Law</option>
+                                    <option value="medicine">Medicine</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Course Selection -->
+            <div>
+                <label for="course" class="block text-sm font-medium text-gray-700">Select Master Course</label>
+                <select id="course" name="course" required 
+                        class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">-- Choose a Course --</option>
+                    <option value="mba">MBA</option>
+                    <option value="msc_computer_science">MSc Computer Science</option>
+                    <option value="ma_english">MA English</option>
+                    <option value="mtech">M.Tech</option>
+                    <option value="msc_mathematics">MSc Mathematics</option>
+                    <option value="ma_economics">MA Economics</option>
+                    <option value="mphil">MPhil</option>
+                    <option value="msc_physics">MSc Physics</option>
+                    <option value="ma_psychology">MA Psychology</option>
+                    <option value="llm">LLM</option>
+                </select>
+            </div>
+
+            <!-- Statement of Purpose -->
+            <div>
+                <label for="sop" class="block text-sm font-medium text-gray-700">Statement of Purpose</label>
+                <textarea id="sop" name="sop" rows="6" required
+                          class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" 
+                        class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Submit Application</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

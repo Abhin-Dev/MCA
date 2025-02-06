@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" onsubmit="return factorial()">
+        <center>
+            <br><br>
+            <h1>FACTORIAL</h1>
+            <br>
+            <hr>
+            <h3>Enter Number :</h3>
+            <input type="text" id="fact">
+            <br><br>
+            <input type="submit" value="Factorial">
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <th>Result :</th>
+                    <td>
+                        <input type="text" id="display" readonly>
+                    </td>
+                </tr>
+            </table>
+            <h3 id="print"></h3>
+        </center>
+    </form>
+</body>
+<script>
+    function factorial(){
+        var number=document.getElementById("fact").value;
+
+        let format_number=/^\d+$/;
+        //only numbers is allowed
+
+        if(number==""){
+            alert("Please enter number ");
+            return false;
+        }
+        if(!format_number.test(number)){
+            alert("Only numbers are allowed");
+            return false;
+        }
+        else{
+            number=parseInt(number);
+            //converting string to an integer
+            result=1;
+
+            for(let i=1;i<=number;i++){
+                result =result*i;
+            }
+            document.getElementById("display").value=result;
+            alert("Factorial of "+ number + " is " +result);
+            //printing on the h3 tag
+            document.getElementById("print").innerText=`Factorail of ${number} is ${result}`;
+            //Returning false to prevent re-submission of page
+            return false;
+        }
+    }
+</script>
+</html>

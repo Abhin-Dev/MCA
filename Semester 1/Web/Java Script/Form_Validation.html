@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="ColourChange.html" onsubmit="return validate()" >
+    <center>
+        <br>
+        <h1>Registration</h1>
+        <br><hr><br>
+        <table >
+            <tr>
+                <th>Name :</th>
+                <td style="padding: 10px;">
+                    <input type="text" name="name" id="user">
+                </td>
+            </tr>
+            <tr>
+                <th>Email :</th>
+                <td style="padding: 10px;">
+                    <input type="text" name="email" id="mail">
+                </td>
+            </tr>
+            <tr>
+                <th>Phone Number :</th>
+                <td style="padding: 10px;">
+                    <input type="text" name="number" id="phone">
+                </td>
+            </tr>
+            <tr>
+                <th>Password :</th>
+                <td style="padding: 10px;"><input type="password" name="password" id="pass"></td>
+            </tr>
+            <tr>
+                <th>Re-Type Password :</th>
+                <td style="padding: 10px;">
+                    <input type="password" id="passw">
+                </td >
+            </tr>
+        </table>
+        <input type="submit" value="Register" >
+    </center>
+</form>
+</body>
+<script>
+    function validate(){
+        var username=document.getElementById("user").value;
+        var email=document.getElementById("mail").value;
+        var number=document.getElementById("phone").value;
+        var password=document.getElementById("pass").value;
+        var repass=document.getElementById("passw").value;
+
+        let name_format=/^[A-Z][A-Za-z\s.]+$/;
+        let email_format=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let number_format=/^\d{10}$/;
+        let password_format=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d\.!@#$%^&*]{8,}$/;
+        
+
+        if(username=="" || email=="" || number=="" || password=="" || repass==""){
+            alert("All fields must be filled");
+            return false;
+        }
+        if(!name_format.test(username)){
+            alert("Name should start with capital letter and do not contain special characters");
+            return false;
+        }
+        if(!email_format.test(email)){
+            alert("Enter a valid email");
+            return false;
+        }
+        if(!number_format.test(number)){
+            alert("Phone number should contain 10 digits");
+            return false;
+        }
+        if(!password_format.test(password)){
+            alert("Password should conatin 8 characters and it should contain atleat one uppercase,one lowercase,one special character and one digit ");
+            return false;
+        }
+        if(password!=repass){
+            alert("Passwords do not match");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+</html>

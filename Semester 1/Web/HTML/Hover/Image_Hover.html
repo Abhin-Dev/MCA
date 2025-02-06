@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image on Hover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover to Change Image</h1>
+    <div class="image-container">
+        <img 
+            id="hoverImage" 
+            src="image1.jpg" 
+            alt="Normal Image">
+    </div>
+
+    <script>
+        // Select the image element
+        const image = document.getElementById('hoverImage');
+
+        // Define the source URLs for the images
+        const normalImage = 'image1.jpg'; // Replace with your normal image URL
+        const hoverImage = 'image2.jpg'; // Replace with your hover image URL
+
+        // Add event listeners for hover (mouse enter and leave)
+        image.addEventListener('mouseenter', () => {
+            image.src = hoverImage; // Change to hover image
+        });
+
+        image.addEventListener('mouseleave', () => {
+            image.src = normalImage; // Revert to the original image
+        });
+    </script>
+</body>
+</html>
